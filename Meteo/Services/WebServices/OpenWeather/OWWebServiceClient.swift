@@ -9,22 +9,44 @@
 import RxSwift
 import Alamofire
 import NetworkStack
+import ObjectMapper
 
 final class OWWebServiceClient {
-  // MARK: - Properties
-  fileprivate static let keychainService = KeychainService(serviceType: Environment.OpenWeather.appName)
-  fileprivate static let networkStack = NetworkStack(baseURL: Environment.OpenWeather.baseURL,
-                                  keychainService: keychainService)
- 
-  
-  // Mark:- Services
-  func threeHoursForecastByCity(name: String) -> Observable<Void> {
-    let requestParameters = RequestParameters(method: .get,
-                                              route: OWRoute.forecastByCity(name: name))
+    // MARK: - Properties
+    fileprivate static let keychainService = KeychainService(serviceType: Environment.OpenWeather.appName)
+    fileprivate static let networkStack = NetworkStack(baseURL: Environment.OpenWeather.baseURL,
+                                                       keychainService: keychainService)
     
-    return OWWebServiceClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
-      .map({ (_, json) -> Void in
-        print(json)
-      })
-  }
+    
+    // Mark:- Services
+    func threeHoursForecast(city: String) -> Observable<ThreeHourForecast?> {
+        let requestParameters = RequestParameters(method: .get,
+                                                  route: OWRoute.threeHourForecast(city: city))
+        
+        return OWWebServiceClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
+            .map({ (_, json) -> ThreeHourForecast? in
+                return Mapper<ThreeHourForecast>().map(JSONObject: json)
+            })
+    }
+
+    // Not available in the free subscription plan
+    func sixteenDaysForecast(city: String) -> Observable<DailyForecast?> {
+        let requestParameters = RequestParameters(method: .get,
+                                                  route: OWRoute.sixteenDaysForecast(city: city))
+
+        return OWWebServiceClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
+            .map({ (_, json) -> DailyForecast? in
+                return Mapper<DailyForecast>().map(JSONObject: json)
+            })
+    }
+    
+    func currentWeather(city: String) -> Observable<CurrentWeather?> {
+        let requestParameters = RequestParameters(method: .get,
+                                                  route: OWRoute.currentWeather(city: city))
+        
+        return OWWebServiceClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
+            .map({ (_, json) -> CurrentWeather? in
+                return Mapper<CurrentWeather>().map(JSONObject: json)
+            })
+    }
 }

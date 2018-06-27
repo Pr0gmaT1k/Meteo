@@ -33,4 +33,15 @@ class MeteoUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
+    func testGeneralNavigation() {
+        
+        let scrollViewsQuery = XCUIApplication().scrollViews
+        scrollViewsQuery.otherElements.collectionViews.cells.otherElements.containing(.staticText, identifier:"SATURDAY").element.swipeLeft()
+        
+        let element = scrollViewsQuery.children(matching: .other).element(boundBy: 0)
+        element.staticTexts["19ºC"]/*@START_MENU_TOKEN@*/.swipeRight()/*[[".swipeUp()",".swipeRight()"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        element.children(matching: .other).element.children(matching: .other).element.swipeUp()
+        
+    }
+    
 }

@@ -9,20 +9,27 @@
 import UIKit
 import Reusable
 
-class DetailsTableViewCell: UITableViewCell, NibReusable {
-  // Mark:- IBOutlets
-  @IBOutlet fileprivate weak var imAge: UIImageView!
-  @IBOutlet fileprivate weak var title: UILabel!
-  @IBOutlet fileprivate weak var value: UILabel!
-  
-  // Mark:- Override
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
-  func fill(image: UIImage, title: String, value: String) {
-    self.imAge.image = image
-    self.title.text = title
-    self.value.text = value
-  }
+final class DetailsTableViewCell: UITableViewCell, NibReusable {
+    // Mark:- IBOutlets
+    @IBOutlet private weak var hour: UILabel!
+    @IBOutlet private weak var temp: UILabel!
+    @IBOutlet private weak var rain: UILabel!
+    @IBOutlet private weak var pressure: UILabel!
+    @IBOutlet private weak var humidity: UILabel!
+    @IBOutlet private weak var weatherImage: UIImageView!
+    
+    // Mark:- Override
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func fill(measure: Measure?) {
+        guard let measure = measure else { return }
+        hour.text = measure.formattedHour
+        temp.text = measure.main?.degreeTempString
+        rain.text = String(format: "%.1f mm", measure.rain?.threeHour.value ?? 0)
+        pressure.text = "\(Int(measure.main?.pressure.value ?? 0)) hPa"
+        humidity.text = "\(measure.main?.humidity.value ?? 0)%"
+        weatherImage.image = measure.weather.first?.image
+    }
 }

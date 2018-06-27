@@ -9,20 +9,24 @@
 import UIKit
 import Reusable
 
-class ForecastCollectionViewCell: UICollectionViewCell, NibReusable {
-  // Mark:- IBOutlets
-  @IBOutlet fileprivate weak var hour: UILabel!
-  @IBOutlet fileprivate weak var temp: UILabel!
-  @IBOutlet fileprivate weak var icon: UIImageView!
-  
-  
-  // Mark:- Overrride
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
-  // Mark:- Public fun
-  func fill() {
+final class ForecastCollectionViewCell: UICollectionViewCell, NibReusable {
+    // Mark:- IBOutlets
+    @IBOutlet fileprivate weak var hour: UILabel!
+    @IBOutlet fileprivate weak var temp: UILabel!
+    @IBOutlet fileprivate weak var icon: UIImageView!
+    @IBOutlet fileprivate weak var tempMax: UILabel!
+    @IBOutlet fileprivate weak var tempMin: UILabel!
     
-  }
+    // Mark:- Public fun
+    func fill(measure: [Measure]?) {
+        let temp = Int(measure?.compactMap { $0.main?.degreeTemp }.average ?? 0)
+        let tempMin = measure?.compactMap { $0.main?.tempMinDegree }.sorted()
+        let tempMax = measure?.compactMap { $0.main?.tempMaxDegree }.sorted()
+        
+        self.temp.text = "\(temp)ºC"
+        self.hour.text = measure?.first?.weekDay.uppercased()
+        self.icon.image = measure?.first?.weather.first?.image
+        self.tempMax.text = "\(tempMax?.last ?? 0)ºC"
+        self.tempMin.text = "\(tempMin?.first ?? 0)ºC"
+    }
 }

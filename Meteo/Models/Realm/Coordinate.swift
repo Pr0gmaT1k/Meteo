@@ -10,7 +10,7 @@ final class Coordinate: Object {
     case lon = "lon"
   }
 
-  let lat = RealmOptional<Float>()
-  let lon = RealmOptional<Float>()
+  var lat = RealmOptional<Double>()
+  var lon = RealmOptional<Double>()
 
 }

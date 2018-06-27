@@ -9,15 +9,19 @@
 import NetworkStack
 
 public enum OWRoute: Routable {
-  case forecastByCity(name: String)
-  
-  public var path: String {
-    switch self {
-    case .forecastByCity(name: let name): return self.route(route: "/data/2.5/forecast?q=\(name)")
+    case threeHourForecast(city: String)
+    case sixteenDaysForecast(city: String)
+    case currentWeather(city: String)
+    
+    public var path: String {
+        switch self {
+        case .threeHourForecast(city: let city): return self.route(route: "/data/2.5/forecast?q=\(city)")
+        case .sixteenDaysForecast(city: let city): return self.route(route: "/data/2.5/forecast/daily?q=\(city)")
+        case .currentWeather(city: let city): return self.route(route: "/data/2.5/weather?q=\(city)")
+        }
     }
-  }
-  
-  private func route(route: String) -> String {
-    return route + "&appid=\(Environment.OpenWeather.openWeatherKey)"
-  }
+    
+    private func route(route: String) -> String {
+        return route + "&appid=\(Environment.OpenWeather.openWeatherKey)"
+    }
 }

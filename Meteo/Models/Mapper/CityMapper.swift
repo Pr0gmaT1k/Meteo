@@ -12,9 +12,10 @@ extension City: Mappable {
   // MARK: Mappable
   func mapping(map: Map) {
     // MARK: Attributes
-    self.country <- map["country"]
     self.id.value <- map["id"]
+    self.country <- map["country"]
     self.name <- map["name"]
+    self.population.value <- map["population"]
 
     // MARK: Relationships
     self.coord <- map["coord"]

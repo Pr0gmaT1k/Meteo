@@ -6,18 +6,24 @@ import Foundation
 final class City: Object {
 
   enum Attributes: String {
-    case country = "country"
     case id = "id"
+    case country = "country"
     case name = "name"
+    case population = "population"
   }
 
   enum Relationships: String {
     case coord = "coord"
   }
 
+  var id = RealmOptional<Int64>()
   dynamic var country: String?
-  let id = RealmOptional<Int64>()
   dynamic var name: String?
+  var population = RealmOptional<Int64>()
   dynamic var coord: Coordinate?
+
+  override static func primaryKey() -> String? {
+    return "id"
+  }
 
 }
