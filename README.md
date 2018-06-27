@@ -1,5 +1,4 @@
 # Meteo (OpenWeather)
-### Technical test for at least two French companies.
 
 
 ### Demo
