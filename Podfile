@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '8.4'
+platform :ios, '11.4'
 
 target ‘Meteo’ do
   use_frameworks!
@@ -10,17 +10,4 @@ target ‘Meteo’ do
   pod 'SwiftLint'
   pod 'SwiftGen'
   pod 'RxSwift'
-  pod 'RxBlocking'  
-  pod 'RxTest' 
-
-  target ‘MeteoTests’ do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target ‘MeteoUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

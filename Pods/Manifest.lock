@@ -1,54 +1,59 @@
 PODS:
-  - Alamofire (4.5.1)
-  - KeychainAccess (3.1.0)
-  - NetworkStack (0.1.5):
+  - Alamofire (4.8.2)
+  - KeychainAccess (3.2.0)
+  - NetworkStack (0.1.6):
     - Alamofire (~> 4.0)
-    - KeychainAccess (~> 3.0)
-    - RxSwift (~> 3.0)
-  - ObjectMapper (3.0.0)
-  - Realm (2.10.2):
-    - Realm/Headers (= 2.10.2)
-  - Realm/Headers (2.10.2)
-  - RealmSwift (2.10.2):
-    - Realm (= 2.10.2)
+    - KeychainAccess (~> 3.1)
+    - RxSwift (~> 4.0)
+  - ObjectMapper (3.4.2)
+  - Realm (3.14.1):
+    - Realm/Headers (= 3.14.1)
+  - Realm/Headers (3.14.1)
+  - RealmSwift (3.14.1):
+    - Realm (= 3.14.1)
   - Reusable (3.0.1):
     - Reusable/Storyboard (= 3.0.1)
     - Reusable/View (= 3.0.1)
   - Reusable/Storyboard (3.0.1)
   - Reusable/View (3.0.1)
-  - RxBlocking (3.6.1):
-    - RxSwift (~> 3.6)
-  - RxSwift (3.6.1)
-  - RxTest (3.6.1):
-    - RxSwift (~> 3.6)
-  - SwiftGen (5.3.0)
-  - SwiftLint (0.25.1)
+  - RxSwift (4.5.0)
+  - SwiftGen (6.1.0)
+  - SwiftLint (0.31.0)
 
 DEPENDENCIES:
   - NetworkStack
   - ObjectMapper
   - RealmSwift
   - Reusable (~> 3.0.1)
-  - RxBlocking
   - RxSwift
-  - RxTest
   - SwiftGen
   - SwiftLint
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - KeychainAccess
+    - NetworkStack
+    - ObjectMapper
+    - Realm
+    - RealmSwift
+    - Reusable
+    - RxSwift
+    - SwiftGen
+    - SwiftLint
+
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  NetworkStack: 9dcf6c7cfce50111b2ef73963357638baa5fac7d
-  ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
-  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
-  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+  NetworkStack: b3b64b19fb27bbe323a7f1b1ca18325df4fc4e2a
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  Realm: e12c9c2387d05c5bba3a9c394838f5870e85763b
+  RealmSwift: a82eab9b04c3e1616082c7e17aa300740847769c
   Reusable: 5362d10271ca8316b104698a21e90498f47e8339
-  RxBlocking: 4f4bd5732e8b952e54ae8a57739bcfb645de12bc
-  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
-  RxTest: 1d00348a7848c91ab5bf5d197d2378aa6b2bb356
-  SwiftGen: 4379bd3640b0a212a0f6ea3c494adba385513d10
-  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 38865c8c320aad4ea4ead57e76c9d3b98ff7524e
+PODFILE CHECKSUM: a1eab376cf4a2be26a08df750a2cff29be11fd88
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.1

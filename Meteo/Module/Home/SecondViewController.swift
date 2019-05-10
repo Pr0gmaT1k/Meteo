@@ -33,7 +33,7 @@ final class SecondViewController: UIViewController {
         // Data
         let threeHourForecasts = realm.objects(ThreeHourForecast.self)
         self.forecasts = threeHourForecasts.first?.groupByDay
-        threeHourForecastToken = threeHourForecasts.addNotificationBlock {[weak self] (changes: RealmCollectionChange) in
+        threeHourForecastToken = threeHourForecasts.observe {[weak self] (changes: RealmCollectionChange) in
             guard let threehour = self?.realm.objects(ThreeHourForecast.self) else { return }
             self?.forecasts = threehour.first?.groupByDay
             self?.detailsTableView.reloadData()

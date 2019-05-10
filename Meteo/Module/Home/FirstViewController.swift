@@ -40,14 +40,14 @@ final class FirstViewController: UIViewController {
         // Data
         let threeHourForecasts = realm.objects(ThreeHourForecast.self)
         self.dailyForecast = threeHourForecasts.first?.groupByDay
-        threeHourForecastToken = threeHourForecasts.addNotificationBlock {[weak self] (changes: RealmCollectionChange) in
+        threeHourForecastToken = threeHourForecasts.observe {[weak self] (changes: RealmCollectionChange) in
             guard let threeHourForecasts = self?.realm.objects(ThreeHourForecast.self) else { return }
             self?.dailyForecast = threeHourForecasts.first?.groupByDay
             self?.collectionView.reloadData()
         }
         
         self.update()
-        currentWeatherToken = self.currentWeathers?.addNotificationBlock {[weak self] (changes: RealmCollectionChange) in
+        currentWeatherToken = self.currentWeathers?.observe {[weak self] (changes: RealmCollectionChange) in
             self?.update()
         }
     }
