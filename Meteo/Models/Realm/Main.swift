@@ -16,13 +16,13 @@ final class Main: Object {
     case temp_min = "temp_min"
   }
 
-  var grnd_level = RealmOptional<Double>()
-  var humidity = RealmOptional<Int16>()
-  var pressure = RealmOptional<Double>()
-  var sea_level = RealmOptional<Double>()
-  var temp = RealmOptional<Double>()
-  var temp_kf = RealmOptional<Double>()
-  var temp_max = RealmOptional<Double>()
-  var temp_min = RealmOptional<Double>()
+  let grnd_level = RealmOptional<Double>()
+  let humidity = RealmOptional<Int16>()
+  let pressure = RealmOptional<Double>()
+  let sea_level = RealmOptional<Double>()
+  let temp = RealmOptional<Double>()
+  let temp_kf = RealmOptional<Double>()
+  let temp_max = RealmOptional<Double>()
+  let temp_min = RealmOptional<Double>()
 
 }

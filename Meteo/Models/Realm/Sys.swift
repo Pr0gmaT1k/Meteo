@@ -15,12 +15,12 @@ final class Sys: Object {
     case type = "type"
   }
 
-  dynamic var country: String?
-  var id = RealmOptional<Int64>()
-  var message = RealmOptional<Double>()
-  dynamic var pod: String?
-  var sunrise = RealmOptional<Int64>()
-  var sunset = RealmOptional<Int64>()
-  var type = RealmOptional<Int16>()
+  @objc dynamic var country: String?
+  let id = RealmOptional<Int64>()
+  let message = RealmOptional<Double>()
+  @objc dynamic var pod: String?
+  let sunrise = RealmOptional<Int64>()
+  let sunset = RealmOptional<Int64>()
+  let type = RealmOptional<Int16>()
 
 }

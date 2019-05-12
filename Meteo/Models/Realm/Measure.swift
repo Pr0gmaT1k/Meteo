@@ -19,13 +19,13 @@ final class Measure: Object {
     case wind = "wind"
   }
 
-  var dt = RealmOptional<Int64>()
-  dynamic var dt_txt: String?
-  dynamic var clouds: Cloud?
-  dynamic var main: Main?
-  dynamic var rain: Rain?
-  dynamic var sys: Sys?
+  let dt = RealmOptional<Int64>()
+  @objc dynamic var dt_txt: String?
+  @objc dynamic var clouds: Cloud?
+  @objc dynamic var main: Main?
+  @objc dynamic var rain: Rain?
+  @objc dynamic var sys: Sys?
   var weather = List<Weather>()
-  dynamic var wind: Wind?
+  @objc dynamic var wind: Wind?
 
 }

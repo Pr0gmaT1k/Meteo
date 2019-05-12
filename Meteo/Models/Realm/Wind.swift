@@ -10,7 +10,7 @@ final class Wind: Object {
     case speed = "speed"
   }
 
-  var deg = RealmOptional<Int32>()
-  var speed = RealmOptional<Double>()
+  let deg = RealmOptional<Int32>()
+  let speed = RealmOptional<Double>()
 
 }

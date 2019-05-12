@@ -12,6 +12,6 @@ extension ThreeHourForecast {
     var groupByDay: [[Measure]] {
         return self.list.group { $0.weekDay }
             .compactMap { $0.value }
-            .sorted { $0.0.first?.dt.value ?? 0 < $0.1.first?.dt.value ?? 0 }
+            .sorted { $0.first?.dt.value ?? 0 < $1.first?.dt.value ?? 0 }
     }
 }

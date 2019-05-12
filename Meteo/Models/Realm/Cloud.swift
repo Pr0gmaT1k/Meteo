@@ -9,6 +9,6 @@ final class Cloud: Object {
     case all = "all"
   }
 
-  var all = RealmOptional<Int64>()
+  let all = RealmOptional<Int64>()
 
 }

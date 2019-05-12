@@ -6,7 +6,7 @@ import Foundation
 final class ThreeHourForecast: Object {
 
   enum Attributes: String {
-    case cod = "cod"
+    case cod = "cod" /* Primary Key */
     case cnt = "cnt"
     case message = "message"
   }
@@ -16,10 +16,10 @@ final class ThreeHourForecast: Object {
     case list = "list"
   }
 
-  dynamic var cod: String?
-  var cnt = RealmOptional<Int64>()
-  var message = RealmOptional<Double>()
-  dynamic var city: City?
+  @objc dynamic var cod: String? /* Primary Key */
+  let cnt = RealmOptional<Int64>()
+  let message = RealmOptional<Double>()
+  @objc dynamic var city: City?
   var list = List<Measure>()
 
   override static func primaryKey() -> String? {

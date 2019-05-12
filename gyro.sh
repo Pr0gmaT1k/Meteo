@@ -14,7 +14,7 @@ if [ ! -d "$DATAMODEL_PATH" ]; then
 fi
 
 MODEL_OUTPUT_DIR=$(dirname $0)/../Meteo/Meteo/Models/Realm
-gyro --model "$DATAMODEL_PATH" --output "$MODEL_OUTPUT_DIR" -t swift3-variant
+gyro --model "$DATAMODEL_PATH" --output "$MODEL_OUTPUT_DIR" -t swift4
 
 
 MAPPER_OUTPUT_DIR=$(dirname $0)/../Meteo/Meteo/Models/Mapper

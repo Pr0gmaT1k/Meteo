@@ -6,7 +6,7 @@ import Foundation
 final class CurrentWeather: Object {
 
   enum Attributes: String {
-    case id = "id"
+    case id = "id" /* Primary Key */
     case base = "base"
     case cod = "cod"
     case dt = "dt"
@@ -23,18 +23,18 @@ final class CurrentWeather: Object {
     case wind = "wind"
   }
 
-  var id = RealmOptional<Int64>()
-  dynamic var base: String?
-  var cod = RealmOptional<Int64>()
-  var dt = RealmOptional<Int64>()
-  dynamic var name: String?
-  var visibility = RealmOptional<Int64>()
-  dynamic var clouds: Cloud?
-  dynamic var coord: Coordinate?
-  dynamic var main: Main?
-  dynamic var sys: Sys?
+  let id = RealmOptional<Int64>() /* Primary Key */
+  @objc dynamic var base: String?
+  let cod = RealmOptional<Int64>()
+  let dt = RealmOptional<Int64>()
+  @objc dynamic var name: String?
+  let visibility = RealmOptional<Int64>()
+  @objc dynamic var clouds: Cloud?
+  @objc dynamic var coord: Coordinate?
+  @objc dynamic var main: Main?
+  @objc dynamic var sys: Sys?
   var weather = List<Weather>()
-  dynamic var wind: Wind?
+  @objc dynamic var wind: Wind?
 
   override static func primaryKey() -> String? {
     return "id"

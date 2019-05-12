@@ -9,6 +9,6 @@ final class Rain: Object {
     case threeHour = "threeHour"
   }
 
-  var threeHour = RealmOptional<Double>()
+  let threeHour = RealmOptional<Double>()
 
 }

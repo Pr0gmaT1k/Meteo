@@ -6,16 +6,16 @@ import Foundation
 final class Weather: Object {
 
   enum Attributes: String {
-    case id = "id"
+    case id = "id" /* Primary Key */
     case descriptionn = "descriptionn"
     case icon = "icon"
     case main = "main"
   }
 
-  var id = RealmOptional<Int64>()
-  dynamic var descriptionn: String?
-  dynamic var icon: String?
-  dynamic var main: String?
+  let id = RealmOptional<Int64>() /* Primary Key */
+  @objc dynamic var descriptionn: String?
+  @objc dynamic var icon: String?
+  @objc dynamic var main: String?
 
   override static func primaryKey() -> String? {
     return "id"
