@@ -3,27 +3,46 @@
 import RealmSwift
 import Foundation
 
-final class ThreeHourForecast: Object {
-
-  enum Attributes: String {
-    case cod = "cod" /* Primary Key */
+final class ThreeHourForecast: Object, Decodable {
+  private enum Keys: String, CodingKey {
+    case cod = "cod"/* Primary Key */
     case cnt = "cnt"
     case message = "message"
-  }
-
-  enum Relationships: String {
     case city = "city"
     case list = "list"
-  }
+
+    }
 
   @objc dynamic var cod: String? /* Primary Key */
   let cnt = RealmOptional<Int64>()
   let message = RealmOptional<Double>()
   @objc dynamic var city: City?
-  var list = List<Measure>()
+  let list = List<Measure>()
 
   override static func primaryKey() -> String? {
     return "cod"
   }
 
+
+
+
+  convenience required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: Keys.self)
+    let cod = try? container.decode(String?.self, forKey: .cod) /* Primary Key */
+    let cnt = try? container.decode(Int64?.self, forKey: .cnt)
+    let message = try? container.decode(Double?.self, forKey: .message)
+    let city = try? container.decode(City?.self, forKey: .city)
+    let list = try container.decode([Measure].self, forKey: .list)
+    self.init(cod: cod, cnt: cnt, message: message, city: city, list: list)
+  }
+
+  convenience init(cod: String?, cnt: Int64?, message: Double?, city: City?, list: [Measure]) {
+    self.init()
+    self.cod = cod
+    self.cnt.value = cnt
+    self.message.value = message
+    self.city = city
+    self.list.append(objectsIn: list)
+
+  }
 }

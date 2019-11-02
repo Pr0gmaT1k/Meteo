@@ -3,14 +3,30 @@
 import RealmSwift
 import Foundation
 
-final class Coordinate: Object {
-
-  enum Attributes: String {
+final class Coordinate: Object, Decodable {
+  private enum Keys: String, CodingKey {
     case lat = "lat"
     case lon = "lon"
-  }
+
+    }
 
   let lat = RealmOptional<Double>()
   let lon = RealmOptional<Double>()
 
+
+
+
+  convenience required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: Keys.self)
+    let lat = try? container.decode(Double?.self, forKey: .lat)
+    let lon = try? container.decode(Double?.self, forKey: .lon)
+    self.init(lat: lat, lon: lon)
+  }
+
+  convenience init(lat: Double?, lon: Double?) {
+    self.init()
+    self.lat.value = lat
+    self.lon.value = lon
+
+  }
 }

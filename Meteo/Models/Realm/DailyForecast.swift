@@ -3,7 +3,12 @@
 import RealmSwift
 import Foundation
 
-final class DailyForecast: Object {
+final class DailyForecast: Object, Decodable {
+
+
+
+
+
 
 
 }

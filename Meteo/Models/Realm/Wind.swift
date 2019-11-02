@@ -3,14 +3,30 @@
 import RealmSwift
 import Foundation
 
-final class Wind: Object {
-
-  enum Attributes: String {
+final class Wind: Object, Decodable {
+  private enum Keys: String, CodingKey {
     case deg = "deg"
     case speed = "speed"
-  }
+
+    }
 
   let deg = RealmOptional<Int32>()
   let speed = RealmOptional<Double>()
 
+
+
+
+  convenience required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: Keys.self)
+    let deg = try? container.decode(Int32?.self, forKey: .deg)
+    let speed = try? container.decode(Double?.self, forKey: .speed)
+    self.init(deg: deg, speed: speed)
+  }
+
+  convenience init(deg: Int32?, speed: Double?) {
+    self.init()
+    self.deg.value = deg
+    self.speed.value = speed
+
+  }
 }

@@ -3,12 +3,26 @@
 import RealmSwift
 import Foundation
 
-final class Cloud: Object {
-
-  enum Attributes: String {
+final class Cloud: Object, Decodable {
+  private enum Keys: String, CodingKey {
     case all = "all"
-  }
+
+    }
 
   let all = RealmOptional<Int64>()
 
+
+
+
+  convenience required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: Keys.self)
+    let all = try? container.decode(Int64?.self, forKey: .all)
+    self.init(all: all)
+  }
+
+  convenience init(all: Int64?) {
+    self.init()
+    self.all.value = all
+
+  }
 }

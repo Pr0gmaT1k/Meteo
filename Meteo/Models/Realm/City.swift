@@ -3,18 +3,15 @@
 import RealmSwift
 import Foundation
 
-final class City: Object {
-
-  enum Attributes: String {
-    case id = "id" /* Primary Key */
+final class City: Object, Decodable {
+  private enum Keys: String, CodingKey {
+    case id = "id"/* Primary Key */
     case country = "country"
     case name = "name"
     case population = "population"
-  }
-
-  enum Relationships: String {
     case coord = "coord"
-  }
+
+    }
 
   let id = RealmOptional<Int64>() /* Primary Key */
   @objc dynamic var country: String?
@@ -26,4 +23,26 @@ final class City: Object {
     return "id"
   }
 
+
+
+
+  convenience required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: Keys.self)
+    let id = try? container.decode(Int64?.self, forKey: .id) /* Primary Key */
+    let country = try? container.decode(String?.self, forKey: .country)
+    let name = try? container.decode(String?.self, forKey: .name)
+    let population = try? container.decode(Int64?.self, forKey: .population)
+    let coord = try? container.decode(Coordinate?.self, forKey: .coord)
+    self.init(id: id, country: country, name: name, population: population, coord: coord)
+  }
+
+  convenience init(id: Int64?, country: String?, name: String?, population: Int64?, coord: Coordinate?) {
+    self.init()
+    self.id.value = id
+    self.country = country
+    self.name = name
+    self.population.value = population
+    self.coord = coord
+
+  }
 }

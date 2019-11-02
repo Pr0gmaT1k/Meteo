@@ -9,10 +9,10 @@
 import RxSwift
 import Alamofire
 import NetworkStack
-import ObjectMapper
 
 final class OWWebServiceClient {
     // MARK: - Properties
+    private let decoder = JSONDecoder()
     fileprivate static let keychainService = KeychainService(serviceType: Environment.OpenWeather.appName)
     fileprivate static let networkStack = NetworkStack(baseURL: Environment.OpenWeather.baseURL,
                                                        keychainService: keychainService)
@@ -23,9 +23,9 @@ final class OWWebServiceClient {
         let requestParameters = RequestParameters(method: .get,
                                                   route: OWRoute.threeHourForecast(city: city))
         
-        return OWWebServiceClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
-            .map({ (_, json) -> ThreeHourForecast? in
-                return Mapper<ThreeHourForecast>().map(JSONObject: json)
+        return OWWebServiceClient.networkStack.sendRequestWithDataResponse(requestParameters: requestParameters)
+            .map({ (_, data) -> ThreeHourForecast? in
+                return try? self.decoder.decode(ThreeHourForecast.self, from: data)
             })
     }
 
@@ -34,9 +34,9 @@ final class OWWebServiceClient {
         let requestParameters = RequestParameters(method: .get,
                                                   route: OWRoute.sixteenDaysForecast(city: city))
 
-        return OWWebServiceClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
-            .map({ (_, json) -> DailyForecast? in
-                return Mapper<DailyForecast>().map(JSONObject: json)
+        return OWWebServiceClient.networkStack.sendRequestWithDataResponse(requestParameters: requestParameters)
+            .map({ (_, data) -> DailyForecast? in
+                return try? self.decoder.decode(DailyForecast.self, from: data)
             })
     }
     
@@ -44,9 +44,9 @@ final class OWWebServiceClient {
         let requestParameters = RequestParameters(method: .get,
                                                   route: OWRoute.currentWeather(city: city))
         
-        return OWWebServiceClient.networkStack.sendRequestWithJSONResponse(requestParameters: requestParameters)
-            .map({ (_, json) -> CurrentWeather? in
-                return Mapper<CurrentWeather>().map(JSONObject: json)
+        return OWWebServiceClient.networkStack.sendRequestWithDataResponse(requestParameters: requestParameters)
+            .map({ (_, data) -> CurrentWeather? in
+                return try? self.decoder.decode(CurrentWeather.self, from: data)
             })
     }
 }

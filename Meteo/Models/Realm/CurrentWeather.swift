@@ -3,25 +3,22 @@
 import RealmSwift
 import Foundation
 
-final class CurrentWeather: Object {
-
-  enum Attributes: String {
-    case id = "id" /* Primary Key */
+final class CurrentWeather: Object, Decodable {
+  private enum Keys: String, CodingKey {
+    case id = "id"/* Primary Key */
     case base = "base"
     case cod = "cod"
     case dt = "dt"
     case name = "name"
     case visibility = "visibility"
-  }
-
-  enum Relationships: String {
     case clouds = "clouds"
     case coord = "coord"
     case main = "main"
     case sys = "sys"
     case weather = "weather"
     case wind = "wind"
-  }
+
+    }
 
   let id = RealmOptional<Int64>() /* Primary Key */
   @objc dynamic var base: String?
@@ -33,11 +30,47 @@ final class CurrentWeather: Object {
   @objc dynamic var coord: Coordinate?
   @objc dynamic var main: Main?
   @objc dynamic var sys: Sys?
-  var weather = List<Weather>()
+  let weather = List<Weather>()
   @objc dynamic var wind: Wind?
 
   override static func primaryKey() -> String? {
     return "id"
   }
 
+
+
+
+  convenience required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: Keys.self)
+    let id = try? container.decode(Int64?.self, forKey: .id) /* Primary Key */
+    let base = try? container.decode(String?.self, forKey: .base)
+    let cod = try? container.decode(Int64?.self, forKey: .cod)
+    let dt = try? container.decode(Int64?.self, forKey: .dt)
+    let name = try? container.decode(String?.self, forKey: .name)
+    let visibility = try? container.decode(Int64?.self, forKey: .visibility)
+    let clouds = try? container.decode(Cloud?.self, forKey: .clouds)
+    let coord = try? container.decode(Coordinate?.self, forKey: .coord)
+    let main = try? container.decode(Main?.self, forKey: .main)
+    let sys = try? container.decode(Sys?.self, forKey: .sys)
+    let weather = try container.decode([Weather].self, forKey: .weather)
+    let wind = try? container.decode(Wind?.self, forKey: .wind)
+    self.init(id: id, base: base, cod: cod, dt: dt, name: name, visibility: visibility, clouds: clouds, coord: coord, main: main, sys: sys, weather: weather, wind: wind)
+  }
+
+  convenience init(id: Int64?, base: String?, cod: Int64?, dt: Int64?, name: String?, visibility: Int64?, clouds: Cloud?, coord: Coordinate?, main: Main?, sys: Sys?, weather: [Weather], wind: Wind?) {
+    self.init()
+    self.id.value = id
+    self.base = base
+    self.cod.value = cod
+    self.dt.value = dt
+    self.name = name
+    self.visibility.value = visibility
+    self.clouds = clouds
+    self.coord = coord
+    self.main = main
+    self.sys = sys
+    self.weather.append(objectsIn: weather)
+    self.wind = wind
+
+  }
 }

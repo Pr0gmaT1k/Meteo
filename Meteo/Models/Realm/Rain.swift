@@ -3,12 +3,26 @@
 import RealmSwift
 import Foundation
 
-final class Rain: Object {
+final class Rain: Object, Decodable {
+  private enum Keys: String, CodingKey {
+    case threeHour = "3h"
 
-  enum Attributes: String {
-    case threeHour = "threeHour"
-  }
+    }
 
   let threeHour = RealmOptional<Double>()
 
+
+
+
+  convenience required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: Keys.self)
+    let threeHour = try? container.decode(Double?.self, forKey: .threeHour)
+    self.init(threeHour: threeHour)
+  }
+
+  convenience init(threeHour: Double?) {
+    self.init()
+    self.threeHour.value = threeHour
+
+  }
 }

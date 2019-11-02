@@ -3,9 +3,8 @@
 import RealmSwift
 import Foundation
 
-final class Main: Object {
-
-  enum Attributes: String {
+final class Main: Object, Decodable {
+  private enum Keys: String, CodingKey {
     case grnd_level = "grnd_level"
     case humidity = "humidity"
     case pressure = "pressure"
@@ -14,7 +13,8 @@ final class Main: Object {
     case temp_kf = "temp_kf"
     case temp_max = "temp_max"
     case temp_min = "temp_min"
-  }
+
+    }
 
   let grnd_level = RealmOptional<Double>()
   let humidity = RealmOptional<Int16>()
@@ -25,4 +25,32 @@ final class Main: Object {
   let temp_max = RealmOptional<Double>()
   let temp_min = RealmOptional<Double>()
 
+
+
+
+  convenience required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: Keys.self)
+    let grnd_level = try? container.decode(Double?.self, forKey: .grnd_level)
+    let humidity = try? container.decode(Int16?.self, forKey: .humidity)
+    let pressure = try? container.decode(Double?.self, forKey: .pressure)
+    let sea_level = try? container.decode(Double?.self, forKey: .sea_level)
+    let temp = try? container.decode(Double?.self, forKey: .temp)
+    let temp_kf = try? container.decode(Double?.self, forKey: .temp_kf)
+    let temp_max = try? container.decode(Double?.self, forKey: .temp_max)
+    let temp_min = try? container.decode(Double?.self, forKey: .temp_min)
+    self.init(grnd_level: grnd_level, humidity: humidity, pressure: pressure, sea_level: sea_level, temp: temp, temp_kf: temp_kf, temp_max: temp_max, temp_min: temp_min)
+  }
+
+  convenience init(grnd_level: Double?, humidity: Int16?, pressure: Double?, sea_level: Double?, temp: Double?, temp_kf: Double?, temp_max: Double?, temp_min: Double?) {
+    self.init()
+    self.grnd_level.value = grnd_level
+    self.humidity.value = humidity
+    self.pressure.value = pressure
+    self.sea_level.value = sea_level
+    self.temp.value = temp
+    self.temp_kf.value = temp_kf
+    self.temp_max.value = temp_max
+    self.temp_min.value = temp_min
+
+  }
 }

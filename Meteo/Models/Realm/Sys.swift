@@ -3,9 +3,8 @@
 import RealmSwift
 import Foundation
 
-final class Sys: Object {
-
-  enum Attributes: String {
+final class Sys: Object, Decodable {
+  private enum Keys: String, CodingKey {
     case country = "country"
     case id = "id"
     case message = "message"
@@ -13,7 +12,8 @@ final class Sys: Object {
     case sunrise = "sunrise"
     case sunset = "sunset"
     case type = "type"
-  }
+
+    }
 
   @objc dynamic var country: String?
   let id = RealmOptional<Int64>()
@@ -23,4 +23,30 @@ final class Sys: Object {
   let sunset = RealmOptional<Int64>()
   let type = RealmOptional<Int16>()
 
+
+
+
+  convenience required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: Keys.self)
+    let country = try? container.decode(String?.self, forKey: .country)
+    let id = try? container.decode(Int64?.self, forKey: .id)
+    let message = try? container.decode(Double?.self, forKey: .message)
+    let pod = try? container.decode(String?.self, forKey: .pod)
+    let sunrise = try? container.decode(Int64?.self, forKey: .sunrise)
+    let sunset = try? container.decode(Int64?.self, forKey: .sunset)
+    let type = try? container.decode(Int16?.self, forKey: .type)
+    self.init(country: country, id: id, message: message, pod: pod, sunrise: sunrise, sunset: sunset, type: type)
+  }
+
+  convenience init(country: String?, id: Int64?, message: Double?, pod: String?, sunrise: Int64?, sunset: Int64?, type: Int16?) {
+    self.init()
+    self.country = country
+    self.id.value = id
+    self.message.value = message
+    self.pod = pod
+    self.sunrise.value = sunrise
+    self.sunset.value = sunset
+    self.type.value = type
+
+  }
 }

@@ -17,8 +17,6 @@
 		A4D643851FB5959000B0C6C7 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D643841FB5959000B0C6C7 /* Environment.swift */; };
 		A4D643881FB5981400B0C6C7 /* OWWebServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D643871FB5981400B0C6C7 /* OWWebServiceClient.swift */; };
 		A4D6438A1FB59F8F00B0C6C7 /* OWRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D643891FB59F8F00B0C6C7 /* OWRoute.swift */; };
-		A4D643981FB5BA5500B0C6C7 /* CityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D643961FB5BA5500B0C6C7 /* CityMapper.swift */; };
-		A4D643991FB5BA5500B0C6C7 /* CoordinateMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D643971FB5BA5500B0C6C7 /* CoordinateMapper.swift */; };
 		A4D6439C1FB5BA6200B0C6C7 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6439A1FB5BA6200B0C6C7 /* Coordinate.swift */; };
 		A4D6439D1FB5BA6200B0C6C7 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6439B1FB5BA6200B0C6C7 /* City.swift */; };
 		A4E3283C1FB3A46600051FC4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E3283B1FB3A46600051FC4 /* FirstViewController.swift */; };
@@ -27,7 +25,6 @@
 		A4E328431FB3AB4B00051FC4 /* DetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4E328411FB3AB4B00051FC4 /* DetailsTableViewCell.xib */; };
 		A4FFFEAF1FB0E75600EDC901 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FFFEAD1FB0E75600EDC901 /* LaunchScreen.storyboard */; };
 		A4FFFEB21FB0E7F900EDC901 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4FFFEB01FB0E7F900EDC901 /* Localizable.strings */; };
-		A4FFFEB81FB0E8F900EDC901 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FFFEB31FB0E8F900EDC901 /* Storyboards.swift */; };
 		A4FFFEB91FB0E8F900EDC901 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4FFFEB41FB0E8F900EDC901 /* Colors.txt */; };
 		A4FFFEBA1FB0E8F900EDC901 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FFFEB51FB0E8F900EDC901 /* Colors.swift */; };
 		A4FFFEBB1FB0E8F900EDC901 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FFFEB61FB0E8F900EDC901 /* Images.swift */; };
@@ -45,21 +42,11 @@
 		A4FFFED51FB0FD8700EDC901 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4FFFECA1FB0FD8700EDC901 /* OpenSans-SemiBoldItalic.ttf */; };
 		A4FFFED91FB1244F00EDC901 /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FFFED71FB1244F00EDC901 /* ForecastCollectionViewCell.swift */; };
 		A4FFFEDA1FB1244F00EDC901 /* ForecastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4FFFED81FB1244F00EDC901 /* ForecastCollectionViewCell.xib */; };
-		BA040F0520C72E8700AC621F /* ThreeHourForecastMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA040F0320C72E8700AC621F /* ThreeHourForecastMapper.swift */; };
-		BA040F0620C72E8700AC621F /* CurrentWeatherMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA040F0420C72E8700AC621F /* CurrentWeatherMapper.swift */; };
 		BA040F0920C72E9400AC621F /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA040F0720C72E9400AC621F /* CurrentWeather.swift */; };
 		BA040F0A20C72E9400AC621F /* ThreeHourForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA040F0820C72E9400AC621F /* ThreeHourForecast.swift */; };
-		BA040F0C20C734D700AC621F /* DailyForecastMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA040F0B20C734D700AC621F /* DailyForecastMapper.swift */; };
 		BA040F0E20C734DD00AC621F /* DailyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA040F0D20C734DD00AC621F /* DailyForecast.swift */; };
 		BAC0266F20C5B1BD00973808 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0266E20C5B1BD00973808 /* Synchronizer.swift */; };
 		BAC0267320C5B2AA00973808 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0267220C5B2AA00973808 /* Realm.swift */; };
-		BAC0267C20C5E60D00973808 /* SysMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0267420C5E60C00973808 /* SysMapper.swift */; };
-		BAC0267D20C5E60D00973808 /* CloudMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0267520C5E60D00973808 /* CloudMapper.swift */; };
-		BAC0267F20C5E60D00973808 /* RainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0267720C5E60D00973808 /* RainMapper.swift */; };
-		BAC0268020C5E60D00973808 /* MeasureMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0267820C5E60D00973808 /* MeasureMapper.swift */; };
-		BAC0268120C5E60D00973808 /* MainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0267920C5E60D00973808 /* MainMapper.swift */; };
-		BAC0268220C5E60D00973808 /* WeatherMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0267A20C5E60D00973808 /* WeatherMapper.swift */; };
-		BAC0268320C5E60D00973808 /* WindMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0267B20C5E60D00973808 /* WindMapper.swift */; };
 		BAC0268C20C5E61300973808 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0268420C5E61300973808 /* Weather.swift */; };
 		BAC0268D20C5E61300973808 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0268520C5E61300973808 /* Measure.swift */; };
 		BAC0268E20C5E61300973808 /* Sys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0268620C5E61300973808 /* Sys.swift */; };
@@ -67,7 +54,6 @@
 		BAC0269120C5E61300973808 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0268920C5E61300973808 /* Cloud.swift */; };
 		BAC0269220C5E61300973808 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0268A20C5E61300973808 /* Rain.swift */; };
 		BAC0269320C5E61300973808 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0268B20C5E61300973808 /* Wind.swift */; };
-		BAC0269620C5E66700973808 /* ListTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0269520C5E66700973808 /* ListTransform.swift */; };
 		BACB356220C81EC600FEF796 /* Main+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB356120C81EC600FEF796 /* Main+Utils.swift */; };
 		BACB356420C8219200FEF796 /* Measure+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB356320C8219200FEF796 /* Measure+Utils.swift */; };
 		BACB356620C825DB00FEF796 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB356520C825DB00FEF796 /* String+Utils.swift */; };
@@ -119,8 +105,6 @@
 		A4D643841FB5959000B0C6C7 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		A4D643871FB5981400B0C6C7 /* OWWebServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWWebServiceClient.swift; sourceTree = "<group>"; };
 		A4D643891FB59F8F00B0C6C7 /* OWRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWRoute.swift; sourceTree = "<group>"; };
-		A4D643961FB5BA5500B0C6C7 /* CityMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityMapper.swift; sourceTree = "<group>"; };
-		A4D643971FB5BA5500B0C6C7 /* CoordinateMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateMapper.swift; sourceTree = "<group>"; };
 		A4D6439A1FB5BA6200B0C6C7 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		A4D6439B1FB5BA6200B0C6C7 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		A4E3283B1FB3A46600051FC4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +113,6 @@
 		A4E328411FB3AB4B00051FC4 /* DetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsTableViewCell.xib; sourceTree = "<group>"; };
 		A4FFFEAE1FB0E75600EDC901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Ressources/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4FFFEB11FB0E7F900EDC901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A4FFFEB31FB0E8F900EDC901 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		A4FFFEB41FB0E8F900EDC901 /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
 		A4FFFEB51FB0E8F900EDC901 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A4FFFEB61FB0E8F900EDC901 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -148,21 +131,11 @@
 		A4FFFED71FB1244F00EDC901 /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4FFFED81FB1244F00EDC901 /* ForecastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastCollectionViewCell.xib; sourceTree = "<group>"; };
 		B42127B79DC654EEB6A61BF2 /* Pods-Meteo-MeteoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteo-MeteoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meteo-MeteoTests/Pods-Meteo-MeteoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BA040F0320C72E8700AC621F /* ThreeHourForecastMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeHourForecastMapper.swift; sourceTree = "<group>"; };
-		BA040F0420C72E8700AC621F /* CurrentWeatherMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherMapper.swift; sourceTree = "<group>"; };
 		BA040F0720C72E9400AC621F /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		BA040F0820C72E9400AC621F /* ThreeHourForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeHourForecast.swift; sourceTree = "<group>"; };
-		BA040F0B20C734D700AC621F /* DailyForecastMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyForecastMapper.swift; sourceTree = "<group>"; };
 		BA040F0D20C734DD00AC621F /* DailyForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyForecast.swift; sourceTree = "<group>"; };
 		BAC0266E20C5B1BD00973808 /* Synchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
 		BAC0267220C5B2AA00973808 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
-		BAC0267420C5E60C00973808 /* SysMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysMapper.swift; sourceTree = "<group>"; };
-		BAC0267520C5E60D00973808 /* CloudMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudMapper.swift; sourceTree = "<group>"; };
-		BAC0267720C5E60D00973808 /* RainMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainMapper.swift; sourceTree = "<group>"; };
-		BAC0267820C5E60D00973808 /* MeasureMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureMapper.swift; sourceTree = "<group>"; };
-		BAC0267920C5E60D00973808 /* MainMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMapper.swift; sourceTree = "<group>"; };
-		BAC0267A20C5E60D00973808 /* WeatherMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMapper.swift; sourceTree = "<group>"; };
-		BAC0267B20C5E60D00973808 /* WindMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindMapper.swift; sourceTree = "<group>"; };
 		BAC0268420C5E61300973808 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		BAC0268520C5E61300973808 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		BAC0268620C5E61300973808 /* Sys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sys.swift; sourceTree = "<group>"; };
@@ -170,7 +143,6 @@
 		BAC0268920C5E61300973808 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		BAC0268A20C5E61300973808 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
 		BAC0268B20C5E61300973808 /* Wind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
-		BAC0269520C5E66700973808 /* ListTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTransform.swift; sourceTree = "<group>"; };
 		BACB356120C81EC600FEF796 /* Main+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+Utils.swift"; sourceTree = "<group>"; };
 		BACB356320C8219200FEF796 /* Measure+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Measure+Utils.swift"; sourceTree = "<group>"; };
 		BACB356520C825DB00FEF796 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
@@ -319,8 +291,6 @@
 		A4D6438C1FB5B20F00B0C6C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BAC0269420C5E65800973808 /* Transform */,
-				A4D643951FB5BA3200B0C6C7 /* Mapper */,
 				A4D6438D1FB5B21600B0C6C7 /* Realm */,
 			);
 			path = Models;
@@ -345,25 +315,6 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
-		A4D643951FB5BA3200B0C6C7 /* Mapper */ = {
-			isa = PBXGroup;
-			children = (
-				BA040F0B20C734D700AC621F /* DailyForecastMapper.swift */,
-				BA040F0420C72E8700AC621F /* CurrentWeatherMapper.swift */,
-				BA040F0320C72E8700AC621F /* ThreeHourForecastMapper.swift */,
-				BAC0267520C5E60D00973808 /* CloudMapper.swift */,
-				BAC0267920C5E60D00973808 /* MainMapper.swift */,
-				BAC0267820C5E60D00973808 /* MeasureMapper.swift */,
-				BAC0267720C5E60D00973808 /* RainMapper.swift */,
-				BAC0267420C5E60C00973808 /* SysMapper.swift */,
-				BAC0267A20C5E60D00973808 /* WeatherMapper.swift */,
-				BAC0267B20C5E60D00973808 /* WindMapper.swift */,
-				A4D643961FB5BA5500B0C6C7 /* CityMapper.swift */,
-				A4D643971FB5BA5500B0C6C7 /* CoordinateMapper.swift */,
-			);
-			path = Mapper;
-			sourceTree = "<group>";
-		};
 		A4E3283F1FB3AAFE00051FC4 /* DetailsTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,10 +328,9 @@
 			isa = PBXGroup;
 			children = (
 				A4FFFEB01FB0E7F900EDC901 /* Localizable.strings */,
-				A4FFFEB51FB0E8F900EDC901 /* Colors.swift */,
 				A4FFFEB41FB0E8F900EDC901 /* Colors.txt */,
+				A4FFFEB51FB0E8F900EDC901 /* Colors.swift */,
 				A4FFFEB61FB0E8F900EDC901 /* Images.swift */,
-				A4FFFEB31FB0E8F900EDC901 /* Storyboards.swift */,
 				A4FFFEB71FB0E8F900EDC901 /* Strings.swift */,
 			);
 			path = Constants;
@@ -483,14 +433,6 @@
 				BACB356D20C88A1F00FEF796 /* Array+Utils.swift */,
 			);
 			name = Extensions;
-			sourceTree = "<group>";
-		};
-		BAC0269420C5E65800973808 /* Transform */ = {
-			isa = PBXGroup;
-			children = (
-				BAC0269520C5E66700973808 /* ListTransform.swift */,
-			);
-			name = Transform;
 			sourceTree = "<group>";
 		};
 		BACB356F20C8976A00FEF796 /* DetailsHeaderTVC */ = {
@@ -666,7 +608,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftgen >/dev/null; then\nSRCDIR=\"$PROJECT_DIR/Meteo\"\n$PODS_ROOT/SwiftGen/bin/swiftgen storyboards -t swift3 \"$SRCDIR\" --output \"$SRCDIR/Constants/Storyboards.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen xcassets -t swift3 \"$SRCDIR/Ressources/Assets.xcassets\" --output \"$SRCDIR/Constants/Images.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen strings -t structured-swift3 \"$SRCDIR/Constants/Localizable.strings\" --output \"$SRCDIR/Constants/Strings.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen colors -t swift3 \"$SRCDIR/Constants/Colors.txt\" --output \"$SRCDIR/Constants/Colors.swift\"\nelse\necho \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
+			shellScript = "SRCDIR=\"$PROJECT_DIR/Meteo\"\n$PODS_ROOT/SwiftGen/bin/swiftgen storyboards -t swift3 \"$SRCDIR\" --output \"$SRCDIR/Constants/Storyboards.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen xcassets -t swift3 \"$SRCDIR/Ressources/Assets.xcassets\" --output \"$SRCDIR/Constants/Images.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen strings -t structured-swift3 \"$SRCDIR/Constants/Localizable.strings\" --output \"$SRCDIR/Constants/Strings.swift\"\n$PODS_ROOT/SwiftGen/bin/swiftgen colors -t swift3 \"$SRCDIR/Constants/Colors.txt\" --output \"$SRCDIR/Constants/Colors.swift\"\n\n";
 		};
 		A4FFFEBD1FB0E97300EDC901 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -710,7 +652,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/NetworkStack/NetworkStack.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
@@ -721,7 +662,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NetworkStack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
@@ -739,18 +679,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4FFFEB81FB0E8F900EDC901 /* Storyboards.swift in Sources */,
-				BA040F0620C72E8700AC621F /* CurrentWeatherMapper.swift in Sources */,
-				BAC0267D20C5E60D00973808 /* CloudMapper.swift in Sources */,
 				A4FFFEBA1FB0E8F900EDC901 /* Colors.swift in Sources */,
 				A4FFFEBB1FB0E8F900EDC901 /* Images.swift in Sources */,
 				BACB356A20C8410C00FEF796 /* ThreeHourForecast+Utils.swift in Sources */,
 				BAC0269220C5E61300973808 /* Rain.swift in Sources */,
 				A4D6439C1FB5BA6200B0C6C7 /* Coordinate.swift in Sources */,
 				BAC0268E20C5E61300973808 /* Sys.swift in Sources */,
-				BA040F0C20C734D700AC621F /* DailyForecastMapper.swift in Sources */,
 				BACB356C20C85EDC00FEF796 /* Weather+Utils.swift in Sources */,
-				BAC0268220C5E60D00973808 /* WeatherMapper.swift in Sources */,
 				BACB356620C825DB00FEF796 /* String+Utils.swift in Sources */,
 				A4D643881FB5981400B0C6C7 /* OWWebServiceClient.swift in Sources */,
 				BAC0267320C5B2AA00973808 /* Realm.swift in Sources */,
@@ -759,7 +694,6 @@
 				BAC0266F20C5B1BD00973808 /* Synchronizer.swift in Sources */,
 				A4E3283E1FB3A47200051FC4 /* SecondViewController.swift in Sources */,
 				BAC0269120C5E61300973808 /* Cloud.swift in Sources */,
-				A4D643991FB5BA5500B0C6C7 /* CoordinateMapper.swift in Sources */,
 				BAC0269320C5E61300973808 /* Wind.swift in Sources */,
 				A4E3283C1FB3A46600051FC4 /* FirstViewController.swift in Sources */,
 				A417FC211FB0E1D70034C16B /* MainContainerViewController.swift in Sources */,
@@ -767,9 +701,7 @@
 				A4E328421FB3AB4B00051FC4 /* DetailsTableViewCell.swift in Sources */,
 				A4D643851FB5959000B0C6C7 /* Environment.swift in Sources */,
 				BACB356420C8219200FEF796 /* Measure+Utils.swift in Sources */,
-				A4D643981FB5BA5500B0C6C7 /* CityMapper.swift in Sources */,
 				BA040F0E20C734DD00AC621F /* DailyForecast.swift in Sources */,
-				BAC0268120C5E60D00973808 /* MainMapper.swift in Sources */,
 				BACB356E20C88A1F00FEF796 /* Array+Utils.swift in Sources */,
 				BAC0268D20C5E61300973808 /* Measure.swift in Sources */,
 				A4D6438A1FB59F8F00B0C6C7 /* OWRoute.swift in Sources */,
@@ -777,15 +709,9 @@
 				BA040F0A20C72E9400AC621F /* ThreeHourForecast.swift in Sources */,
 				A4FFFED91FB1244F00EDC901 /* ForecastCollectionViewCell.swift in Sources */,
 				A4FFFEBC1FB0E8F900EDC901 /* Strings.swift in Sources */,
-				BAC0269620C5E66700973808 /* ListTransform.swift in Sources */,
 				BACB356820C82A6900FEF796 /* Sequence+Utils.swift in Sources */,
-				BA040F0520C72E8700AC621F /* ThreeHourForecastMapper.swift in Sources */,
-				BAC0267C20C5E60D00973808 /* SysMapper.swift in Sources */,
 				BACB357320C8979D00FEF796 /* DetailsHeaderTableView.swift in Sources */,
-				BAC0268320C5E60D00973808 /* WindMapper.swift in Sources */,
-				BAC0268020C5E60D00973808 /* MeasureMapper.swift in Sources */,
 				A417FC1F1FB0E1D70034C16B /* AppDelegate.swift in Sources */,
-				BAC0267F20C5E60D00973808 /* RainMapper.swift in Sources */,
 				BA040F0920C72E9400AC621F /* CurrentWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -986,8 +912,6 @@
 					"-framework",
 					"\"NetworkStack\"",
 					"-framework",
-					"\"ObjectMapper\"",
-					"-framework",
 					"\"Realm\"",
 					"-framework",
 					"\"RealmSwift\"",
@@ -1030,8 +954,6 @@
 					"-framework",
 					"\"NetworkStack\"",
 					"-framework",
-					"\"ObjectMapper\"",
-					"-framework",
 					"\"Realm\"",
 					"-framework",
 					"\"RealmSwift\"",
@@ -1072,8 +994,6 @@
 					"\"MobileCoreServices\"",
 					"-framework",
 					"\"NetworkStack\"",
-					"-framework",
-					"\"ObjectMapper\"",
 					"-framework",
 					"\"Realm\"",
 					"-framework",
@@ -1121,8 +1041,6 @@
 					"-framework",
 					"\"NetworkStack\"",
 					"-framework",
-					"\"ObjectMapper\"",
-					"-framework",
 					"\"Realm\"",
 					"-framework",
 					"\"RealmSwift\"",
@@ -1167,8 +1085,6 @@
 					"-framework",
 					"\"NetworkStack\"",
 					"-framework",
-					"\"ObjectMapper\"",
-					"-framework",
 					"\"Realm\"",
 					"-framework",
 					"\"RealmSwift\"",
@@ -1212,8 +1128,6 @@
 					"\"MobileCoreServices\"",
 					"-framework",
 					"\"NetworkStack\"",
-					"-framework",
-					"\"ObjectMapper\"",
 					"-framework",
 					"\"Realm\"",
 					"-framework",

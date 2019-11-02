@@ -6,7 +6,6 @@ target ‘Meteo’ do
   pod 'NetworkStack'
   pod 'RealmSwift'
   pod 'Reusable', '~> 3.0.1’
-  pod 'ObjectMapper'
   pod 'SwiftLint'
   pod 'SwiftGen'
   pod 'RxSwift'
